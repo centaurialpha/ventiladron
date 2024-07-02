@@ -15,7 +15,7 @@ class Reader:
         value = self._ec_fd.read(2)
         rpm = ((0 | value[0] << 8 ) | value[1])
         if rpm != 0:
-            value = constants.FAN_RPM / rpm
+            value = constants.FAN_RPM // rpm
         else:
             value = 0
         return value
