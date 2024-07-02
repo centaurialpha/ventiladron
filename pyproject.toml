@@ -1,0 +1,62 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vtron"
+dynamic = ["version"]
+description = "Fan control for MSI laptops"
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Gabriel Acosta", email = "acostadariogabriel@gmail.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = []
+
+[project.scripts]
+vtron = "vtron.app:main"
+
+[project.urls]
+Documentation = "https://github.com/centaurialpha/ventiladron/vtron#readme"
+Issues = "https://github.com/centaurialpha/ventiladron/issues"
+Source = "https://github.com/centaurialpha/ventiladron/"
+
+[tool.hatch.version]
+path = "src/vtron/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/vtron tests}"
+
+[tool.coverage.run]
+source_pkgs = ["vtron", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/vtron/__about__.py",
+]
+
+[tool.coverage.paths]
+vtron = ["src/vtron", "*/vtron/src/vtron"]
+tests = ["tests", "*/vtron/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
