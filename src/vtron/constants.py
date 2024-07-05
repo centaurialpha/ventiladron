@@ -18,6 +18,11 @@ GPU_REALTIME_TEMP = 0x80
 FAN_RPM = 478000
 
 
+class CoolerBoostModes(enum.Enum):
+    ON = "on"
+    OFF = "off"
+
+
 class CPUGen(enum.IntEnum):
     DEFAULT = 0
     GEN11 = 1

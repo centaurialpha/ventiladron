@@ -26,10 +26,10 @@ class Reader:
         self._ec_fd.seek(constants.GPU_REALTIME_TEMP)
         return int(self._ec_fd.read(1).hex(), 16)
 
-    def get_fan_mode_type(self):
-        mask = 0x03
-        value = int(self._read_fan_mode())
-        print(value & mask)
+    # def get_fan_mode_type(self):
+    #     mask = 0x03
+    #     value = int(self._read_fan_mode())
+    #     print(value & mask)
 
     def _read_fan_mode(self) -> bytes:
         self._ec_fd.seek(constants.FAN_MODE_ADDR)
