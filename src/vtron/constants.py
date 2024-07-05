@@ -11,7 +11,7 @@ COOLER_BOOST_OFF = 0x00
 FAN_MODE_ADDR = 0xF4
 
 CPU_REALTIME_TEMP = 0x68
-CPU_REALTIME_FAN_SPEED_RPM = 0xcc
+CPU_REALTIME_FAN_SPEED_RPM = 0xCC
 
 GPU_REALTIME_TEMP = 0x80
 
@@ -27,3 +27,10 @@ class FanMode(enum.Enum):
     AUTO = "auto"
     BASIC = "basic"
     ADVANCED = "advanced"
+
+
+FAN_MODES = {
+    0x0D: FanMode.AUTO,
+    0x4D: FanMode.BASIC,
+    0x8D: FanMode.ADVANCED,
+}
