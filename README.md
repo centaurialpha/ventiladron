@@ -5,16 +5,31 @@
 
 -----
 
-## Table of Contents
+> [!NOTE]
+> Under development and very unstable.
+> 
+> Being tested on an MSI GF63 Thin laptop.
+>
+> See `ToDo`.
 
-- [Installation](#installation)
-- [License](#license)
+> [!WARNING]
+> Be careful, use at your own risk.
 
-## Installation
-
-```console
-pip install vtron
-```
+# ToDo
+- [ ] Core
+  - [x] EC Reader.
+  - [ ] EC Writter.
+  - [ ] Cooler boost.
+  - [x] CPU/GPU Temp.
+  - [ ] CPU/GPU realtime rpm speed.
+  - [ ] CPU/GPU fan speeds curve.
+- [ ] Server.
+  - [ ] D-bus vs ZMQ.
+  - [ ] Expose API.
+- [ ] Client.
+  - [ ] TUI (`textual`).
+  - [ ] CLI.
+- [ ] systemd service.
 
 ## License
 
